@@ -11,7 +11,7 @@ HeroContent.innerHTML = `
 
     <div class='hero__conection'>
         <p>Связаться</p>
-        <a type='button' href='https://t.me/choochoo66' class='hero__button'>
+        <a type='button' href='#' class='hero__button'>
         <div class='button__line top'></div>
         <div class='button__line bottom'></div>
         <div class='button__line left'></div>
