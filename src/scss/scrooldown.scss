@@ -1,0 +1,45 @@
+.scrooldown{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+}
+.scrol__button{
+    width: 50px;
+    min-height: 70px;
+    position: relative;
+    background-color: transparent;
+    z-index: 3;
+    border-radius: 2px;
+}
+.arrow{
+    cursor: pointer;
+    position: absolute;
+    bottom: 30px;
+    left: calc(50% - 25px);
+    animation: arrowDown 2s infinite;
+}
+.arrow.two {
+    opacity: 0;
+    animation-delay: 0.8s;
+  }
+  
+  @keyframes arrowDown {
+    0% {
+      bottom: 35px;
+      opacity: 1;
+    }
+    100% {
+      bottom: 0px;
+      opacity: 0;
+    }
+  }
+
+@media screen and (max-width:590px) {
+    .scrooldown{
+        padding-bottom: 50px;
+    }
+}

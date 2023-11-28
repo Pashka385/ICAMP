@@ -1,0 +1,349 @@
+:root{
+    --transition:1s cubic-bezier(.05,.5,0,1)
+    }
+.hero{
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: transparent;
+    perspective: 1000 ;
+}
+.hero__logo {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    position: relative;
+    transition: all ease-in-out 0.3s;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+    will-change: transform;
+    transition: var(--transition);
+    box-shadow: 0em 0em 0em 1em #824b9e,0em 0em 1em 1em #774fa0,0em 0em 2em 1em #8054adc5;
+    transform: translateZ(0.9);
+    background:linear-gradient(#8b4ca8,#5a3580,#7745aac5) ;
+}
+.hero__logo img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center center;
+    transform: translateZ(100px) scale(1);
+    transition: all ease-in-out 0.3s;
+    filter: brightness(60%)
+}
+.hero__logo.active{
+    transform: translateZ(1);
+    transform: rotateX(0deg) rotateY(0deg);
+    will-change: none;
+    transition: none;
+}
+.hero__logo.active img{
+    transform: translateZ(0px) scale(0.9);
+    opacity: 0.8;
+    filter: blur(1px);
+    filter: brightness(60%)
+}
+.hero__title{
+    width: 300px;
+    min-height: 200px;
+    line-height: 70px;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    flex-direction: column;
+    transform: skewY(-5deg);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 50px;
+}
+.hero__title p{
+    font-size: 50px;
+    color: #fff;
+    letter-spacing: 3px;
+    text-shadow:  4px 4px 4px #444242;
+}
+.hero__title span{
+    color: rgb(255, 255, 255);
+    letter-spacing: 3px;
+    font-size: 50px;
+    position: relative;
+}
+@media screen and (max-width:1080px) {
+    .hero__title p{
+        font-size: 45px;
+    }
+    .hero__title span{
+        font-size: 45px;
+    }
+}
+.hero__title span::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: rgb(75, 33, 132);
+    border-radius: 4px;
+}
+.hero__conection{
+    padding: 30px 0px;
+    width: 300px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+    gap: 30px;
+    transform: skewY(5deg);
+}
+.hero__conection p{
+    font-size: 50px;
+    color: #fff;
+    letter-spacing: 3px;
+    font-family: 'Oswald', sans-serif;
+    text-shadow: 4px 4px 4px #444242;
+}
+@media screen and (max-width:1080px) {
+    .hero__conection p{
+        font-size: 45px;
+    }
+}
+.hero__conection a{
+    color: rgb(217, 205, 234);
+    font-family: 'Homenaje', sans-serif;
+    font-size: 20px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    overflow: hidden;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 30px;
+    transition: all ease-in-out 0.2s;
+    border-radius: 5px;
+    text-shadow: 2px 2px 2px #444242;
+}
+.button__line{
+    position: absolute;
+    display: block;
+}
+
+.button__line.top{
+top: 0;
+left: -100%;
+width: 100%;
+height: 2px;
+background: linear-gradient(90deg,transparent,rgb(75, 33, 132));
+}
+.hero__conection a:hover .button__line.top{
+    left: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+.button__line.bottom{
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,rgb(75, 33, 132));
+    }
+    .hero__conection a:hover .button__line.bottom{
+        right: 100%;
+        transition: 1s;
+        transition-delay: 0.25s;
+    }
+
+.button__line.left{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(0deg,transparent,rgb(75, 33, 132));
+    }
+    .hero__conection a:hover .button__line.left{
+        bottom: 100%;
+        transition: 1s;
+        transition-delay: 0s;
+        }
+
+.button__line.right {
+    position: absolute;
+    top: -100%;
+    right: 0;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(180deg, transparent, rgb(75, 33, 132));
+    }
+        
+    .hero__conection a:hover .button__line.right {
+        top: 100%;
+        transition: 1s;
+        transition-delay: 0s;
+        }
+
+.hero__conection a:hover {
+    color: #fff;
+    background-color:rgb(75, 33, 132) ;
+    transition-delay: 1s;
+    box-shadow:0px 0px 10px rgb(75, 33, 132),0px 0px 40px rgb(75, 33, 132),0px 0px 80px rgb(75, 33, 132) ;
+    text-shadow: 0px 0px 0px #444242;
+}
+@media screen and (max-width:800px) {
+    .hero__conection a{
+        color: #fff;
+        background-color:rgb(75, 33, 132) ;
+        box-shadow:0px 0px 10px rgb(75, 33, 132),0px 0px 40px rgb(75, 33, 132),0px 0px 80px rgb(75, 33, 132) ;
+        text-shadow: 0px 0px 0px #444242;
+    }
+        .hero__conection a:hover .button__line.top{
+            left: 0%;
+            transition: 0s;
+         }
+        .hero__conection a:hover .button__line.bottom{
+            right: 0%;
+            transition: 0s;
+        }
+        .hero__conection a:hover .button__line.left{
+            bottom: 0%;
+            transition: 0s;
+        } 
+        .hero__conection a:hover .button__line.right {
+            top: 0%;
+            transition: 0s;
+        }
+    
+    .hero__conection a:hover {
+        transition-delay: 0s;
+        box-shadow:0px 0px 10px rgb(75, 33, 132),0px 0px 40px rgb(75, 33, 132),0px 0px 80px rgb(75, 33, 132) ;
+        text-shadow: 0px 0px 0px #444242;
+    }
+}
+@media screen and (max-width:1080px) {
+    .hero__logo{
+        width: 350px;
+        height: 350px;
+    }
+    .hero__title{
+        padding-left: 30px;}   }
+        
+@media screen and (max-width:900px) {
+    .hero {
+        width: 100%;
+        min-height: 70vh;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        position: relative;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+      }
+      
+      .hero__title {
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 2;
+        position: absolute;
+        text-align: center;
+        gap: 0px;
+        padding-top: 15px;
+        align-self: flex-start;
+      }
+      
+      .hero__logo {
+        width: 350px;
+        height: 350px;
+        justify-self: center;
+        align-self: center;
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+      
+      .hero__conection {
+        text-align: center;
+        display: flex;
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        gap: 10px;
+      }
+}
+
+@media screen and (max-width:590px) {
+    .hero{
+    display: flex;
+    flex-direction: column;
+    }
+    .hero__title {
+        position: relative;
+        text-align: center;
+        align-self: center;
+        text-align: centers;
+        transform: skewY(0deg);
+        transition: all ease-in-out 0.2s;
+      }
+      .hero__conection {
+        transform: skewY(0deg);
+        transition: all ease-in-out 0.2s;
+      }
+      .hero__logo{
+        width: 340px;
+        height: 340px;
+      }
+}
+@media screen and (max-width:390px) {
+    .hero__logo{
+        width: 300px;
+        height: 300px;
+    }
+}
+@media screen and (max-width:355px) {
+    .hero__logo{
+        width: 270px;
+        height: 270px;
+    }
+}
+@media screen and (max-width:330px) {
+    .hero__logo{
+        width: 250px;
+        height: 250px;
+    }
+}
+.hero__button.active{
+    animation-name: Hero__Button;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    animation-delay: 0.25s;
+    animation-fill-mode: forwards;
+}
+@keyframes Hero__Button{
+    0%{
+        transform: translateX(0px);
+        transform: rotate(0deg);
+    }
+    20%{
+        transform: translateX(3px);
+        transform: rotate(2deg);
+    }
+    40%{
+        transform: translateX(-3px);
+        transform: rotate(-2deg);
+    }
+    60%{
+        transform: translateX(3px);
+        transform: rotate(2deg);
+    }
+    80%{
+        transform: translateX(-3px);
+        transform: rotate(-2deg);
+    }
+    100%{
+        transform: translateX(0px);
+        transform: rotate(0deg);
+    }
+}

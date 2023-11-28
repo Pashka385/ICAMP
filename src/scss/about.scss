@@ -1,0 +1,195 @@
+.about{
+    position: relative;
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding-top: 100px;
+}
+.about__title{
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px 10px 0px;
+    font-size: 60px;
+    letter-spacing: -2px;
+    white-space: nowrap;
+    font-family: 'Oswald', sans-serif;
+    text-shadow: 4px 4px #696868bd;
+}
+.about__title span{
+    animation: none 6s linear forwards;
+    animation-delay: 0.35s;
+}
+.about__title span.active{
+    animation: smoke 6s linear forwards;
+    animation-delay: 0.35s;
+}
+.about__title span:nth-child(8){
+    animation-delay: 0.5s ;
+}
+.about__title span:nth-child(7){
+    animation-delay: 1s ;
+}
+.about__title span:nth-child(6){
+    animation-delay: 1.5s ;
+}
+.about__title span:nth-child(5){
+    animation-delay: 2s ;
+}
+.about__title span:nth-child(4){
+    animation-delay: 2.5s ;
+}
+.about__title span:nth-child(3){
+    animation-delay: 3s ;
+}
+.about__title span:nth-child(2){
+    animation-delay: 3.5s ;
+}
+.about__title span:nth-child(1){
+    animation-delay: 4s ;
+}
+@keyframes smoke{
+    100%{
+        filter: blur(1em);
+        opacity: 0;
+    }
+}
+@media screen and (max-width:700px) {
+    .about__title{
+        font-size: 50px;
+    }
+}
+@media screen and (max-width:500px) {
+    .about__title{
+        font-size: 40px;
+    }
+}
+@media screen and (max-width:350px) {
+    .about__title{
+        font-size: 30px;
+    }
+}
+.about__box{
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 10px 30px 10px;
+    gap: 30px;
+    overflow-x: hidden;
+}
+.card{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 280px;
+    min-height: 380px;
+    margin: 30px;
+    border-radius: 20px;
+    border-bottom-left-radius: 160px;
+    border-bottom-right-radius: 160px;
+    box-shadow: 0px 15px 0 #fff,
+    inset 0 -15px 0 rgba(255,255,255, 0.25),
+    0 45px 0 rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    background: linear-gradient(to bottom,#1f0835,#654bf6);
+    transition: all ease-in-out 0.3s;
+}
+.card::before{
+    content: '';
+    position: absolute;
+    top: -140px;
+    left: -40%;
+    width: 100%;
+    height: 120%;
+    background: linear-gradient(90deg,transparent,rgba(255,255,255,0.2));
+    transform: rotate(35deg);
+    pointer-events: none;
+    filter: blur(5px);
+}
+.icom{
+    position: relative;
+    width: 140px;
+    height: 120px;
+    background-color: #090E16;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    box-shadow: 0px 10px 0 rgba(0, 0, 0, 0.1),
+    inset 0 -8px 0 #fff;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease-in-out 0.3s;
+}
+.icom:hover{
+    color: #954bf6;
+    transition: all ease-in-out 0.3s;
+}
+.icom::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-top-right-radius: 50px;
+    box-shadow: 15px -15px 0 15px #090E16;
+}
+.icom::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-top-left-radius: 50px;
+    box-shadow: -15px -15px 0 15px #090E16;
+}
+.icom{
+    color: #fff;
+    position: relative;
+    padding: 30px;
+    z-index: 10;
+    --ionicon-stroke-width:24px;
+    font-size: 6em;
+}
+.content{
+    position: absolute;
+    width: 100%;
+    padding: 30px;
+    padding-top: 140px;
+    text-align: center;
+}
+.content h2{
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 10px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    font-family: 'Oswald', sans-serif;
+}
+.content p{
+    color: #fff;
+    line-height: 1.25em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
+@media screen and (max-width:400px) {
+    .card{
+        width: 250px;
+        height: 350px;
+    }
+}
